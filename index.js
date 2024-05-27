@@ -1,10 +1,11 @@
 import express from "express";
-import { Passport } from "passport";
-import GoogleStrategy from "passport-google-oauth20";
+import "./services/passport.js";
+import "./routes/authRoutes.js";
+import { authRoutes } from "./routes/authRoutes.js";
 
 const app = express();
 
-console.log(process.env.x);
+authRoutes(app);
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT);
